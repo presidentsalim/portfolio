@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111114" />
+      <stop offset="100%" stop-color="#0a0a0b" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg)" />
+  <rect width="1200" height="750" fill="url(#grid)" />
+  <rect x="30" y="30" width="1140" height="690" rx="16" fill="#141418" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+  
+  <!-- Browser topbar -->
+  <rect x="30" y="30" width="1140" height="56" rx="16" fill="#18181c" />
+  <rect x="30" y="70" width="1140" height="16" fill="#18181c" />
+  <line x1="30" y1="86" x2="1170" y2="86" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+  <circle cx="65" cy="58" r="6" fill="#ff5f56" />
+  <circle cx="85" cy="58" r="6" fill="#ffbd2e" />
+  <circle cx="105" cy="58" r="6" fill="#27c93f" />
+  <rect x="150" y="44" width="420" height="28" rx="6" fill="#0d0d10" stroke="rgba(255,255,255,0.05)" />
+  <text x="170" y="63" fill="#8a8a93" font-family="monospace" font-size="12">https://github.com/presidentsalim</text>
+  
+  <!-- Content -->
+  <text x="80" y="150" fill="#c6ff3d" font-family="monospace" font-size="14" letter-spacing="2">PROJECT PREVIEW 01</text>
+  <text x="80" y="200" fill="#f4f4f0" font-family="system-ui, sans-serif" font-weight="700" font-size="34">ASP.NET Core Identity & Auth</text>
+  <text x="80" y="235" fill="#8a8a93" font-family="system-ui, sans-serif" font-size="16">C# / EF Core</text>
+  
+  <!-- Visual Box -->
+  <rect x="80" y="280" width="1040" height="380" rx="12" fill="#0d0d10" stroke="rgba(255,255,255,0.06)" />
+  
+  <!-- Metrics / Detail blocks -->
+  <rect x="120" y="320" width="300" height="130" rx="8" fill="#16161b" stroke="rgba(198,255,61,0.2)" stroke-width="1" />
+  <text x="145" y="360" fill="#8a8a93" font-family="monospace" font-size="12">MODULE FOCUS</text>
+  <text x="145" y="400" fill="#f4f4f0" font-family="system-ui, sans-serif" font-weight="600" font-size="18">Primary Flow</text>
+  
+  <rect x="460" y="320" width="620" height="130" rx="8" fill="#16161b" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+  <text x="490" y="360" fill="#8a8a93" font-family="monospace" font-size="12">ARCHITECTURE NOTE</text>
+  <text x="490" y="400" fill="#c6ff3d" font-family="monospace" font-size="16">Role-based Authorization Middleware</text>
+  
+  <!-- Code snippet area -->
+  <rect x="120" y="480" width="960" height="140" rx="8" fill="#09090b" stroke="rgba(255,255,255,0.05)" />
+  <text x="150" y="525" fill="#8a8a93" font-family="monospace" font-size="14">// Source: github.com/presidentsalim</text>
+  <text x="150" y="555" fill="#f4f4f0" font-family="monospace" font-size="15">public async Task ExecuteVerificationPipeline() { await Database.VerifyAsync(); }</text>
+  <text x="150" y="585" fill="#c6ff3d" font-family="monospace" font-size="14">status: 200 OK | zero warnings | strict compilation</text>
+</svg>

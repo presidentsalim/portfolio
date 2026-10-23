@@ -1,0 +1,104 @@
+%PDF-1.4
+1 0 obj
+<<
+  /Type /Catalog
+  /Pages 2 0 R
+>>
+endobj
+2 0 obj
+<<
+  /Type /Pages
+  /Kids [3 0 R]
+  /Count 1
+>>
+endobj
+3 0 obj
+<<
+  /Type /Page
+  /Parent 2 0 R
+  /MediaBox [0 0 595 842]
+  /Contents 4 0 R
+  /Resources <<
+    /Font <<
+      /F1 5 0 R
+      /F2 6 0 R
+    >>
+  >>
+>>
+endobj
+4 0 obj
+<<
+  /Length 550
+>>
+stream
+BT
+/F1 22 Tf
+50 780 Td
+(SALIM PRESIDENT) Tj
+/F2 11 Tf
+0 -24 Td
+(Full-Stack Developer | MCA Student at Uka Tarsadia University, Gujarat, India) Tj
+0 -18 Td
+(GitHub: github.com/presidentsalim | LinkedIn: linkedin.com/in/salim-president-14384836a) Tj
+0 -30 Td
+/F1 14 Tf
+(EDUCATION) Tj
+/F2 10 Tf
+0 -18 Td
+(Master of Computer Applications - Uka Tarsadia University, Gujarat) Tj
+0 -30 Td
+/F1 14 Tf
+(TECHNICAL SKILLS) Tj
+/F2 10 Tf
+0 -18 Td
+(Frontend: React, Next.js, Tailwind CSS, TypeScript, JavaScript, HTML5/CSS3) Tj
+0 -15 Td
+(Backend: Node.js, Express, ASP.NET Core, Python FastAPI, PHP) Tj
+0 -15 Td
+(Database & Tools: MongoDB, SQL, Git, GitHub, REST APIs) Tj
+0 -30 Td
+/F1 14 Tf
+(PROJECT HIGHLIGHTS) Tj
+/F2 10 Tf
+0 -18 Td
+(1. ASP.NET Core Identity & Role Auth System - Secure session and role architecture) Tj
+0 -15 Td
+(2. Movie Recommendation System - FastAPI backend with genre matching algorithms) Tj
+0 -15 Td
+(3. Food Delivery Platform - Multi-tier ordering workflow with cart management) Tj
+0 -15 Td
+(4. TextUtils React - High-performance string manipulation and statistics tool) Tj
+ET
+endstream
+endobj
+5 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica-Bold
+>>
+endobj
+6 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica
+>>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000266 00000 n 
+0000000870 00000 n 
+0000000949 00000 n 
+trailer
+<<
+  /Size 7
+  /Root 1 0 R
+>>
+startxref
+1023
+%%EOF
