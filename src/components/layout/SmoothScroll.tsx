@@ -51,14 +51,20 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
     };
   }, []);
 
-  // Refresh ScrollTrigger and scroll to top on route change
+  // Refresh ScrollTrigger and scroll to top on route change, and ensure document.title is never entity-encoded
   useEffect(() => {
     const { ScrollTrigger } = getGsap();
     if (lenisRef.current) {
       lenisRef.current.scrollTo(0, { immediate: true });
     }
+    if (typeof document !== "undefined" && document.title.includes("&amp;")) {
+      document.title = document.title.replaceAll("&amp;", "&");
+    }
     setTimeout(() => {
       ScrollTrigger.refresh();
+      if (typeof document !== "undefined" && document.title.includes("&amp;")) {
+        document.title = document.title.replaceAll("&amp;", "&");
+      }
     }, 100);
   }, [pathname]);
 

@@ -32,7 +32,8 @@ export default function Marquee({
       aria-hidden="true"
     >
       <div
-        className={`inline-flex items-center gap-6 ${animationClass} ${durationClass} hover:[animation-play-state:paused]`}
+        style={{ animationDuration: speed === "slow" ? "38s" : "24s" }}
+        className={`inline-flex items-center gap-6 ${animationClass} will-change-transform hover:[animation-play-state:paused]`}
       >
         {repeatedItems.map((item, idx) => (
           <span

@@ -6,6 +6,8 @@ import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import ScrollProgress from "@/components/layout/ScrollProgress";
 import IntroLoader from "@/components/ui/IntroLoader";
+import StyledComponentsRegistry from "@/lib/registry";
+import { ThemeGlobalStyles } from "@/components/layout/ThemeStyles";
 import { OWNER } from "@/data/projects";
 
 const spaceGrotesk = Space_Grotesk({
@@ -55,9 +57,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/profile.jpg",
-        width: 1200,
-        height: 630,
-        alt: `${OWNER.name} Full-Stack Developer`,
+        width: 768,
+        height: 1024,
+        alt: `${OWNER.name} - Full-Stack Developer`,
       },
     ],
   },
@@ -127,14 +129,18 @@ export default function RootLayout({
         {/* Intro Loader (Session-based) */}
         <IntroLoader />
 
-        {/* Smooth Scroll Wrapper with Lenis */}
-        <SmoothScroll>
-          <div className="flex flex-col min-h-screen">
-            <Navbar />
-            <div className="flex-1">{children}</div>
-            <Footer />
-          </div>
-        </SmoothScroll>
+        {/* Styled Components SSR Registry */}
+        <StyledComponentsRegistry>
+          <ThemeGlobalStyles />
+          {/* Smooth Scroll Wrapper with Lenis */}
+          <SmoothScroll>
+            <div className="flex flex-col min-h-screen">
+              <Navbar />
+              <div className="flex-1">{children}</div>
+              <Footer />
+            </div>
+          </SmoothScroll>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );

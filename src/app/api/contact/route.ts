@@ -1,14 +1,32 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
-const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters").max(100),
-  email: z.string().email("Invalid email address"),
-  projectType: z.string().min(1, "Please select a project type"),
-  budget: z.string().min(1, "Please select an estimated budget"),
-  message: z.string().min(10, "Message must be at least 10 characters").max(2000),
-  honeypot: z.string().optional(),
-});
+const contactSchema = z
+  .object({
+    name: z.string().min(2, "Name must be at least 2 characters").max(100),
+    email: z.string().email("Invalid email address"),
+    engagementType: z.string().min(1, "Please select an engagement type"),
+    budget: z.string().optional(),
+    message: z.string().min(10, "Message must be at least 10 characters").max(2000),
+    website_url: z.string().optional(),
+    honeypot: z.string().optional(),
+  })
+  .refine(
+    (data) => {
+      const isPaid =
+        data.engagementType === "Freelance Project" ||
+        data.engagementType === "Contract" ||
+        data.engagementType === "Consultation";
+      if (isPaid && (!data.budget || data.budget.trim().length === 0)) {
+        return false;
+      }
+      return true;
+    },
+    {
+      message: "Please select an estimated budget for this project",
+      path: ["budget"],
+    }
+  );
 
 // Simple in-memory rate limiting
 const ipRateLimits = new Map<string, { count: number; resetAt: number }>();
@@ -41,13 +59,16 @@ export async function POST(request: Request) {
       );
     }
 
-    // Honeypot bot protection
-    if (parsed.data.honeypot && parsed.data.honeypot.trim().length > 0) {
+    // Honeypot bot protection (website_url or legacy honeypot)
+    if (
+      (parsed.data.website_url && parsed.data.website_url.trim().length > 0) ||
+      (parsed.data.honeypot && parsed.data.honeypot.trim().length > 0)
+    ) {
       return NextResponse.json({ success: true, message: "Message received." });
     }
 
     const apiKey = process.env.RESEND_API_KEY;
-    const recipient = process.env.CONTACT_TO_EMAIL || "salim.president.dev@gmail.com";
+    const recipient = process.env.CONTACT_TO_EMAIL || "presidentsalim379@gmail.com";
 
     if (!apiKey) {
       return NextResponse.json(
@@ -69,8 +90,8 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         from: "Portfolio Contact <onboarding@resend.dev>",
         to: recipient,
-        subject: `New inquiry from ${parsed.data.name} (${parsed.data.projectType})`,
-        text: `Name: ${parsed.data.name}\nEmail: ${parsed.data.email}\nProject Type: ${parsed.data.projectType}\nBudget: ${parsed.data.budget}\n\nMessage:\n${parsed.data.message}`,
+        subject: `New inquiry from ${parsed.data.name} (${parsed.data.engagementType})`,
+        text: `Name: ${parsed.data.name}\nEmail: ${parsed.data.email}\nEngagement Type: ${parsed.data.engagementType}\nBudget: ${parsed.data.budget || "Not applicable (Full-time / Direct)"}\n\nMessage:\n${parsed.data.message}`,
       }),
     });
 

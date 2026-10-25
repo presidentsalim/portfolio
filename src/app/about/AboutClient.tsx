@@ -108,7 +108,7 @@ export default function AboutClient() {
             <div className="relative w-full max-w-md mx-auto aspect-[4/5] rounded-2xl overflow-hidden border border-white/[0.1] bg-[#111114]">
               <Image
                 src={OWNER.profileImage}
-                alt={`Portrait of ${OWNER.name}`}
+                alt={`${OWNER.name} - Full-Stack Developer`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 400px"
                 className="object-cover"
@@ -146,28 +146,47 @@ export default function AboutClient() {
               aria-hidden="true"
             />
 
-            {TIMELINE.map((item, idx) => (
-              <div key={idx} className="relative space-y-2">
-                {/* Node icon */}
-                <div className="absolute -left-[27px] sm:-left-[39px] top-1 w-6 h-6 rounded-full bg-[#111114] border-2 border-accent flex items-center justify-center">
-                  <GraduationCap className="w-3 h-3 text-accent" />
+            {TIMELINE.map((item, idx) => {
+              const isCurrent = item.year.toLowerCase().includes("present");
+              return (
+                <div key={idx} className="relative">
+                  {/* Node icon */}
+                  <div className="absolute -left-[35px] sm:-left-[47px] top-5 w-7 h-7 rounded-full bg-[#111114] border-2 border-accent flex items-center justify-center shadow-md">
+                    <GraduationCap className="w-3.5 h-3.5 text-accent" aria-hidden="true" />
+                  </div>
+
+                  {/* Card Container */}
+                  <div className="p-6 bg-[#111114] border border-white/[0.08] hover:border-white/[0.14] rounded-2xl space-y-3 transition-colors">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <div className="flex items-center gap-2 font-mono text-xs text-muted">
+                        <span className="text-accent font-semibold">{item.year}</span>
+                        <span>•</span>
+                        <span>{item.institution}</span>
+                      </div>
+
+                      {isCurrent ? (
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-accent/10 border border-accent/20 font-mono text-[10px] text-accent font-medium">
+                          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                          Currently Ongoing
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.08] font-mono text-[10px] text-muted font-medium">
+                          Completed
+                        </span>
+                      )}
+                    </div>
+
+                    <h3 className="font-display font-bold text-xl text-foreground">
+                      {item.role}
+                    </h3>
+
+                    <p className="text-sm text-muted leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-
-                <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-muted">
-                  <span className="text-accent font-semibold">{item.year}</span>
-                  <span>:</span>
-                  <span>{item.institution}</span>
-                </div>
-
-                <h3 className="font-display font-bold text-xl text-foreground">
-                  {item.role}
-                </h3>
-
-                <p className="text-sm text-muted leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 

@@ -84,9 +84,9 @@ export default function IntroLoader() {
         <p className="font-mono text-xs text-accent tracking-widest uppercase">
           01 // Initialization
         </p>
-        <h1 className="text-4xl md:text-7xl font-display font-bold text-foreground tracking-tight">
+        <p className="text-4xl md:text-7xl font-display font-bold text-foreground tracking-tight">
           {OWNER.name}
-        </h1>
+        </p>
         <p className="font-mono text-sm text-muted">
           {OWNER.role} : {OWNER.city}
         </p>

@@ -30,7 +30,7 @@ git push -u origin main
 ### Step 3: Configure Environment Variables (Optional for contact emails)
 Under **Environment Variables** in Vercel project settings, add:
 - `RESEND_API_KEY`: Your API key from [Resend](https://resend.com) (if you want contact form emails delivered to your inbox).
-- `CONTACT_TO_EMAIL`: `salim.president.dev@gmail.com`
+- `CONTACT_TO_EMAIL`: `presidentsalim379@gmail.com`
 - `NEXT_PUBLIC_SITE_URL`: `https://your-vercel-domain.vercel.app`
 
 Click **"Deploy"**. Your site will build and deploy in under 60 seconds with SSL and global edge CDN.

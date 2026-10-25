@@ -4,9 +4,25 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { OWNER } from "@/data/projects";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://salimpresident.vercel.app";
+
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Plain language privacy policy explaining data practices on Salim President's portfolio.",
+  alternates: {
+    canonical: `${siteUrl}/privacy`,
+  },
+  openGraph: {
+    title: "Privacy Policy | Salim President",
+    description: "Plain language privacy policy explaining data practices on Salim President's portfolio.",
+    url: `${siteUrl}/privacy`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | Salim President",
+    description: "Plain language privacy policy explaining data practices on Salim President's portfolio.",
+  },
 };
 
 export default function PrivacyPage() {
@@ -46,7 +62,7 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-5 space-y-1 font-mono text-xs text-foreground">
               <li>Your name</li>
               <li>Your email address</li>
-              <li>Your selected project type and estimated budget</li>
+              <li>Your selected engagement type and estimated project budget (when applicable)</li>
               <li>The content of your message</li>
             </ul>
             <p>

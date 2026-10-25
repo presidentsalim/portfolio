@@ -4,9 +4,25 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { OWNER } from "@/data/projects";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://salimpresident.vercel.app";
+
 export const metadata: Metadata = {
   title: "Terms & Conditions",
   description: "Terms and conditions for utilizing the portfolio website of Salim President.",
+  alternates: {
+    canonical: `${siteUrl}/terms`,
+  },
+  openGraph: {
+    title: "Terms & Conditions | Salim President",
+    description: "Terms and conditions for utilizing the portfolio website of Salim President.",
+    url: `${siteUrl}/terms`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms & Conditions | Salim President",
+    description: "Terms and conditions for utilizing the portfolio website of Salim President.",
+  },
 };
 
 export default function TermsPage() {
