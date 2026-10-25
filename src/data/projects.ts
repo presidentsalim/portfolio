@@ -43,7 +43,7 @@ export const OWNER = {
   instagram: "https://www.instagram.com/salim_president",
   availabilityText: "Available for select freelance and engineering roles",
   profileImage: "/profile.jpg",
-  badgeFrontImage: "/profile-badge.jpg",
+  badgeFrontImage: "/profile-card.jpg",
   badgeBackImage: "/profile-back.jpg",
   resumePath: "/resume.pdf",
 };
@@ -72,7 +72,7 @@ export const SKILL_GROUPS = [
   {
     category: "Frontend",
     number: "02",
-    skills: ["React", "Next.js", "Tailwind CSS", "Redux Toolkit", "Framer Motion", "GSAP"],
+    skills: ["React", "Next.js", "Tailwind CSS"],
   },
   {
     category: "Backend",

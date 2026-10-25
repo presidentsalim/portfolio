@@ -9,8 +9,6 @@ import {
   Clock,
   Briefcase,
   MapPin,
-  ExternalLink,
-  Sparkles,
 } from "lucide-react";
 import { OWNER } from "@/data/projects";
 import { getGsap } from "@/lib/gsap";
@@ -161,9 +159,9 @@ export default function BadgeCard3D() {
                 />
 
                 {/* Big Full-Size Portrait Photo */}
-                <div className="relative w-full h-[300px] sm:h-[330px] rounded-2xl overflow-hidden bg-[#0d0d10] border border-white/[0.1] shadow-inner mt-2">
+                <div className="relative w-full h-[310px] sm:h-[340px] rounded-2xl overflow-hidden bg-[#0d0d10] border border-white/[0.1] shadow-inner mt-2">
                   <Image
-                    src={OWNER.profileImage}
+                    src={OWNER.badgeFrontImage}
                     alt={`Portrait photo of ${OWNER.name}`}
                     fill
                     sizes="(max-width: 640px) 340px, 400px"
@@ -219,7 +217,7 @@ export default function BadgeCard3D() {
               </div>
 
               {/* ========================================================= */}
-              {/* BACK OF CARD (Detailed Profile Credentials)                */}
+              {/* BACK OF CARD (Detailed Profile Credentials - No Image)     */}
               {/* ========================================================= */}
               <div
                 aria-hidden={!isFlipped}
@@ -264,7 +262,8 @@ export default function BadgeCard3D() {
                       "C#",
                       "Python",
                       "Next.js",
-                      "React 18",
+                      "React",
+                      "Tailwind CSS",
                       "Node.js",
                       "ASP.NET Core",
                       "FastAPI",

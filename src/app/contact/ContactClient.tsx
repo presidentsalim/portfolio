@@ -229,7 +229,7 @@ export default function ContactClient() {
                     <input
                       id="name"
                       type="text"
-                      placeholder="e.g. John Doe"
+                      placeholder="Salim President"
                       aria-invalid={!!errors.name}
                       aria-describedby={errors.name ? "name-error" : undefined}
                       {...register("name")}
@@ -251,7 +251,7 @@ export default function ContactClient() {
                     <input
                       id="email"
                       type="email"
-                      placeholder="name@company.com"
+                      placeholder="name@gmail.com"
                       aria-invalid={!!errors.email}
                       aria-describedby={errors.email ? "email-error" : undefined}
                       {...register("email")}
@@ -331,7 +331,7 @@ export default function ContactClient() {
                   <textarea
                     id="message"
                     rows={6}
-                    placeholder="Describe your project requirements, technology stack, timeline, or engineering opportunity..."
+                    placeholder="Enter a message"
                     aria-invalid={!!errors.message}
                     aria-describedby={errors.message ? "message-error" : undefined}
                     {...register("message")}
