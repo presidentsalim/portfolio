@@ -124,6 +124,24 @@ export const SERVICES: Service[] = [
 
 export const PROJECTS: Project[] = [
   {
+    slug: "recruitpro-automation-suite",
+    title: "RecruitPro: Recruitment Portal & Selenium Test Automation",
+    category: "Full-Stack",
+    year: "2026",
+    role: "Full-Stack Developer & QA Engineer",
+    tech: ["PHP", "MySQL", "Selenium WebDriver", "Python", "Bootstrap", "JavaScript"],
+    problem: "Recruitment platforms handle critical applicant onboarding where regression bugs in registration, credential handling, and role authorization cause candidate loss.",
+    solution: "Developed an end-to-end recruitment management web portal integrated with a comprehensive Selenium WebDriver automated test suite covering multi-browser signup workflows and test metrics.",
+    outcome: "100% automated test coverage on signup pipelines with automated test reports and verified relational data integrity.",
+    liveUrl: null,
+    githubUrl: "https://github.com/presidentsalim/RecruitPro-Automation",
+    screenshots: [
+      "/projects/recruitpro-automation-suite/1.png",
+      "/projects/recruitpro-automation-suite/2.png",
+      "/projects/recruitpro-automation-suite/3.png",
+    ],
+  },
+  {
     slug: "asp-net-identity-auth",
     title: "ASP.NET Core Identity & Role Authentication",
     category: "Backend",

@@ -67,7 +67,7 @@ export default function FeaturedWork() {
             href="/projects"
             className="hidden sm:inline-flex items-center gap-1.5 font-mono text-xs text-muted hover:text-accent transition-colors"
           >
-            <span>View all 6 case studies</span>
+            <span>View all {PROJECTS.length} case studies</span>
             <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
           </Link>
         </div>
@@ -91,9 +91,8 @@ export default function FeaturedWork() {
             return (
               <div
                 key={project.slug}
-                className={`transition-opacity duration-300 ${
-                  isDimmed ? "opacity-30" : "opacity-100"
-                }`}
+                className={`transition-opacity duration-300 ${isDimmed ? "opacity-30" : "opacity-100"
+                  }`}
                 onMouseEnter={() => {
                   if (!isTouchDevice) setActiveProject(project);
                 }}
@@ -213,9 +212,8 @@ export default function FeaturedWork() {
         <div
           ref={previewRef}
           aria-hidden="true"
-          className={`pointer-events-none fixed top-0 left-0 z-50 transition-opacity duration-200 hidden md:block will-change-transform ${
-            activeProject ? "opacity-100 scale-100" : "opacity-0 scale-95"
-          }`}
+          className={`pointer-events-none fixed top-0 left-0 z-50 transition-opacity duration-200 hidden md:block will-change-transform ${activeProject ? "opacity-100 scale-100" : "opacity-0 scale-95"
+            }`}
           style={{ width: "360px" }}
         >
           {activeProject && (
