@@ -55,7 +55,7 @@ export default function FeaturedWork() {
         <div className="flex items-center justify-between mb-12">
           <div className="flex items-center gap-2">
             <span className="font-mono text-xs uppercase tracking-widest text-accent">
-              05
+              04
             </span>
             <span className="h-px w-8 bg-white/[0.1]" />
             <span className="font-mono text-xs uppercase tracking-widest text-muted">

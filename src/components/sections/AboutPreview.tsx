@@ -66,7 +66,7 @@ export default function AboutPreview() {
         {/* Section Header */}
         <div className="flex items-center gap-2 mb-8">
           <span className="font-mono text-xs uppercase tracking-widest text-accent">
-            03
+            02
           </span>
           <span className="h-px w-8 bg-white/[0.1]" />
           <span className="font-mono text-xs uppercase tracking-widest text-muted">
