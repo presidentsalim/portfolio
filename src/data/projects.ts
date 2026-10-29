@@ -154,9 +154,9 @@ export const PROJECTS: Project[] = [
     liveUrl: null,
     githubUrl: "https://github.com/presidentsalim/asp-net-p3-auth",
     screenshots: [
-      "/projects/asp-net-identity-auth/1.svg",
-      "/projects/asp-net-identity-auth/2.svg",
-      "/projects/asp-net-identity-auth/3.svg",
+      "/projects/asp-net-identity-auth/1.png",
+      "/projects/asp-net-identity-auth/2.png",
+      "/projects/asp-net-identity-auth/3.png",
     ],
   },
   {
@@ -172,9 +172,9 @@ export const PROJECTS: Project[] = [
     liveUrl: null,
     githubUrl: "https://github.com/presidentsalim/movie-recommendation-system",
     screenshots: [
-      "/projects/fastapi-movie-recommendation/1.svg",
-      "/projects/fastapi-movie-recommendation/2.svg",
-      "/projects/fastapi-movie-recommendation/3.svg",
+      "/projects/fastapi-movie-recommendation/1.png",
+      "/projects/fastapi-movie-recommendation/2.png",
+      "/projects/fastapi-movie-recommendation/3.png",
     ],
   },
   {
@@ -190,9 +190,9 @@ export const PROJECTS: Project[] = [
     liveUrl: null,
     githubUrl: "https://github.com/presidentsalim/online-food-delivery",
     screenshots: [
-      "/projects/online-food-delivery-system/1.svg",
-      "/projects/online-food-delivery-system/2.svg",
-      "/projects/online-food-delivery-system/3.svg",
+      "/projects/online-food-delivery-system/1.png",
+      "/projects/online-food-delivery-system/2.png",
+      "/projects/online-food-delivery-system/3.png",
     ],
   },
   {
@@ -208,9 +208,9 @@ export const PROJECTS: Project[] = [
     liveUrl: null,
     githubUrl: "https://github.com/presidentsalim/TodoApp",
     screenshots: [
-      "/projects/aspnet-razor-todo-app/1.svg",
-      "/projects/aspnet-razor-todo-app/2.svg",
-      "/projects/aspnet-razor-todo-app/3.svg",
+      "/projects/aspnet-razor-todo-app/1.png",
+      "/projects/aspnet-razor-todo-app/2.png",
+      "/projects/aspnet-razor-todo-app/3.png",
     ],
   },
   {
@@ -226,9 +226,9 @@ export const PROJECTS: Project[] = [
     liveUrl: null,
     githubUrl: "https://github.com/presidentsalim/TextUtils-React",
     screenshots: [
-      "/projects/textutils-react-toolkit/1.svg",
-      "/projects/textutils-react-toolkit/2.svg",
-      "/projects/textutils-react-toolkit/3.svg",
+      "/projects/textutils-react-toolkit/1.png",
+      "/projects/textutils-react-toolkit/2.png",
+      "/projects/textutils-react-toolkit/3.png",
     ],
   },
   {
@@ -244,9 +244,9 @@ export const PROJECTS: Project[] = [
     liveUrl: null,
     githubUrl: "https://github.com/presidentsalim/PortfolioMVC",
     screenshots: [
-      "/projects/mvc-portfolio-architecture/1.svg",
-      "/projects/mvc-portfolio-architecture/2.svg",
-      "/projects/mvc-portfolio-architecture/3.svg",
+      "/projects/mvc-portfolio-architecture/1.png",
+      "/projects/mvc-portfolio-architecture/2.png",
+      "/projects/mvc-portfolio-architecture/3.png",
     ],
   },
 ];
