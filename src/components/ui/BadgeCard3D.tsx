@@ -138,9 +138,8 @@ export default function BadgeCard3D() {
           >
             <div
               style={{
-                transform: `rotateX(${tilt.rotateX}deg) rotateY(${
-                  tilt.rotateY + (isFlipped ? 180 : 0)
-                }deg)`,
+                transform: `rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY + (isFlipped ? 180 : 0)
+                  }deg)`,
                 transition: "transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
               }}
               className="preserve-3d relative w-[310px] xs:w-[340px] sm:w-[380px] md:w-[390px] h-[580px] sm:h-[620px] rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)]"
@@ -236,7 +235,7 @@ export default function BadgeCard3D() {
                       Credential Details
                     </span>
                     <span className="font-mono text-[9px] text-muted">
-                      ID: UTU-MCA-2024
+                      ID: UTU-MCA-2026
                     </span>
                   </div>
                   <h3 className="font-display font-bold text-xl sm:text-2xl text-foreground">

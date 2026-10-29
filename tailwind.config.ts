@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -17,9 +18,9 @@ const config: Config = {
         foreground: "var(--foreground)",
         muted: "var(--muted)",
         accent: {
-          DEFAULT: "#c6ff3d",
-          hover: "#b3ea34",
-          dim: "rgba(198, 255, 61, 0.12)",
+          DEFAULT: "var(--accent)",
+          hover: "var(--accent-hover)",
+          dim: "var(--accent-dim)",
         },
       },
       fontFamily: {

@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 import { OWNER } from "@/data/projects";
 
 const navLinks = [
@@ -117,11 +118,11 @@ export default function Navbar() {
               })}
             </div>
 
-            {/* Availability Pill & Contact CTA Button */}
-            <div className="hidden lg:flex items-center gap-3.5">
+            {/* Availability Pill, Theme Toggle & Contact CTA Button */}
+            <div className="hidden md:flex items-center gap-3">
               <div
                 aria-label="Freelance availability status"
-                className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#16161b] border border-white/[0.08] text-[11px] font-mono text-muted"
+                className="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-[#16161b] border border-white/[0.08] text-[11px] font-mono text-muted"
               >
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
@@ -129,6 +130,9 @@ export default function Navbar() {
                 </span>
                 <span>Available</span>
               </div>
+
+              {/* Theme Toggle Button */}
+              <ThemeToggle />
 
               <Link
                 href="/contact"
@@ -139,20 +143,23 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-              aria-expanded={mobileMenuOpen}
-              className="md:hidden p-2 rounded-lg text-muted hover:text-foreground hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors"
-            >
-              {mobileMenuOpen ? (
-                <X className="w-5 h-5 text-accent" aria-hidden="true" />
-              ) : (
-                <Menu className="w-5 h-5" aria-hidden="true" />
-              )}
-            </button>
+            {/* Mobile Controls: Theme Toggle & Menu Button */}
+            <div className="flex items-center gap-1.5 md:hidden">
+              <ThemeToggle />
+              <button
+                type="button"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+                aria-expanded={mobileMenuOpen}
+                className="p-2 rounded-lg text-muted hover:text-foreground hover:bg-white/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors"
+              >
+                {mobileMenuOpen ? (
+                  <X className="w-5 h-5 text-accent" aria-hidden="true" />
+                ) : (
+                  <Menu className="w-5 h-5" aria-hidden="true" />
+                )}
+              </button>
+            </div>
           </nav>
         </div>
       </header>
@@ -221,9 +228,12 @@ export default function Navbar() {
           </div>
 
           <div className="pt-6 border-t border-white/[0.08] flex flex-col gap-4">
-            <div className="flex items-center gap-2 font-mono text-xs text-muted">
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span>{OWNER.availabilityText}</span>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2 font-mono text-xs text-muted">
+                <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                <span>{OWNER.availabilityText}</span>
+              </div>
+              <ThemeToggle showLabel />
             </div>
             <Link
               href="/contact"

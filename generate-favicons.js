@@ -1,3 +1,4 @@
+
 const fs = require('fs');
 
 const svgFavicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
@@ -7,8 +8,8 @@ const svgFavicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" 
 </svg>`;
 
 fs.writeFileSync('public/favicon.svg', svgFavicon);
-fs.writeFileSync('src/app/favicon.ico', Buffer.from([0,0,1,0,1,0,16,16,0,0,1,0,32,0,68,4,0,0,22,0,0,0])); // minimal valid ico header
-fs.writeFileSync('public/favicon.ico', Buffer.from([0,0,1,0,1,0,16,16,0,0,1,0,32,0,68,4,0,0,22,0,0,0]));
+fs.writeFileSync('src/app/favicon.ico', Buffer.from([0, 0, 1, 0, 1, 0, 16, 16, 0, 0, 1, 0, 32, 0, 68, 4, 0, 0, 22, 0, 0, 0])); // minimal valid ico header
+fs.writeFileSync('public/favicon.ico', Buffer.from([0, 0, 1, 0, 1, 0, 16, 16, 0, 0, 1, 0, 32, 0, 68, 4, 0, 0, 22, 0, 0, 0]));
 
 // Let's also create apple-touch-icon.png using a 180x180 png
 // We can generate a 180x180 raw PNG using Node Buffer

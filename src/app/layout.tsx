@@ -8,6 +8,7 @@ import ScrollProgress from "@/components/layout/ScrollProgress";
 import IntroLoader from "@/components/ui/IntroLoader";
 import StyledComponentsRegistry from "@/lib/registry";
 import { ThemeGlobalStyles } from "@/components/layout/ThemeStyles";
+import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { OWNER } from "@/data/projects";
 
 const spaceGrotesk = Space_Grotesk({
@@ -107,14 +108,20 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} dark`}
+      suppressHydrationWarning
     >
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var s=localStorage.getItem('theme');var t=s||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'dark');if(t==='light'){document.documentElement.classList.remove('dark');document.documentElement.classList.add('light');}else{document.documentElement.classList.remove('light');document.documentElement.classList.add('dark');}}catch(e){}})();`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-sans antialiased bg-[#0a0a0b] text-[#f4f4f0] selection:bg-accent selection:text-[#0a0a0b]">
+      <body className="font-sans antialiased bg-background text-foreground selection:bg-accent selection:text-[#0a0a0b]">
         {/* Skip to Content Link for Accessibility */}
         <a
           href="#main-content"
@@ -129,18 +136,21 @@ export default function RootLayout({
         {/* Intro Loader (Session-based) */}
         <IntroLoader />
 
-        {/* Styled Components SSR Registry */}
-        <StyledComponentsRegistry>
-          <ThemeGlobalStyles />
-          {/* Smooth Scroll Wrapper with Lenis */}
-          <SmoothScroll>
-            <div className="flex flex-col min-h-screen">
-              <Navbar />
-              <div className="flex-1">{children}</div>
-              <Footer />
-            </div>
-          </SmoothScroll>
-        </StyledComponentsRegistry>
+        {/* Theme Context Provider */}
+        <ThemeProvider>
+          {/* Styled Components SSR Registry */}
+          <StyledComponentsRegistry>
+            <ThemeGlobalStyles />
+            {/* Smooth Scroll Wrapper with Lenis */}
+            <SmoothScroll>
+              <div className="flex flex-col min-h-screen">
+                <Navbar />
+                <div className="flex-1">{children}</div>
+                <Footer />
+              </div>
+            </SmoothScroll>
+          </StyledComponentsRegistry>
+        </ThemeProvider>
       </body>
     </html>
   );
